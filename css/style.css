@@ -1,8 +1,10 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: url(../images/paisaje.jpg);
+}
+body{
+    background: url(../images/morty-siendo-atacado.jpg);
     background-size: cover;
     background-attachment: fixed;
     font-family: monospace;
@@ -24,7 +26,7 @@ header img{
     align-items: center;
 }
 
-.cards div{
+.carta{
     border: solid 1px white;
     margin: 10px;
     padding: 10px;
@@ -35,4 +37,10 @@ header img{
     align-items: center;
     text-align: center;
     color: white;
+    cursor: grab;
 }
+
+/* .carta .selected{
+    transform: scale(1.02) rotate(2px);
+    box-shadow: 0px, 0px, 20px, rgba(149, 153, 159, .16);
+} */

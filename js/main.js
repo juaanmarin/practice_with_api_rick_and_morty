@@ -1,5 +1,6 @@
 const url="https://rickandmortyapi.com/api/character";
-const cards=document.querySelector(".cards")
+const cards=document.querySelector(".cards");
+const lista=document.querySelector("#lista");
 
 window.addEventListener("load", getCharacter()); //ejecuta la funcion cuando la pagina se carga
 
@@ -17,6 +18,13 @@ function addCard(data){
 
 function createCard(element){
     const content=document.createElement("div");
+    content.setAttribute("class","carta");
+
+    const contentimage=document.createElement("div");
+    contentimage.classList="image";
+
+    const contentitle=document.createElement("div");
+    contentimage.classList="titlee";
 
     const title=document.createElement("h2");
     title.textContent=element.name;
@@ -25,10 +33,16 @@ function createCard(element){
     image.setAttribute("src",element.image);
     image.textContent=element.image;
 
-    content.appendChild(title);
-    content.appendChild(image);
+    contentitle.appendChild(title);
+    contentimage.appendChild(image);
+
+    content.appendChild(contentitle);
+    content.appendChild(contentimage);
 
     return content;
-    
 }
 
+Sortable.create(lista, {
+    Animation: 150,
+    chosenclass: "selected"
+});
