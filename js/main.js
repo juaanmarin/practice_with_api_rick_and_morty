@@ -44,5 +44,6 @@ function createCard(element){
 
 Sortable.create(lista, {
     Animation: 150,
-    chosenclass: "selected"
+    // chosenclass: "selected"
+    ghostClass: 'blue-background-class'
 });
