@@ -5,13 +5,16 @@ body{
     background: url(../images/paisaje.jpg);
     background-size: cover;
     background-attachment: fixed;
+    font-family: monospace;
 }
 .content{
     background-color: rgba(0, 0, 0, 0.478);
 }
 header{
-    color: white;
     text-align: center;
+}
+header img{
+    width: 700px;
 }
 .cards{
     margin: 30px;
@@ -30,5 +33,6 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: white;
 }
