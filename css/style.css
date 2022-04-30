@@ -13,7 +13,10 @@ body{
     background-color: rgba(0, 0, 0, 0.478);
 }
 header{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
 }
 header img{
     width: 700px;
