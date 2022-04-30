@@ -1,8 +1,12 @@
 const url="https://rickandmortyapi.com/api/character";
 const cards=document.querySelector(".cards");
 const lista=document.querySelector("#lista");
+const input=document.querySelector(".name");
+const button=document.querySelector(".search");
+const error=document.querySelector(".error");
 
-window.addEventListener("load", getCharacter()); //ejecuta la funcion cuando la pagina se carga
+window.addEventListener("load", getCharacter); //ejecuta la funcion cuando la pagina se carga
+input.addEventListener("keyup", searchcharacters)
 
 function getCharacter(){
     fetch(url)
@@ -10,7 +14,22 @@ function getCharacter(){
     .then(data => addCard(data.results))
 }
 
+function searchcharacters(){
+    while (cards.firstChild) {
+        cards.removeChild(cards.firstChild);
+    }
+    let search=(url)+`/?name=${input.value}`;
+    
+    fetch(search)
+    .then(response => response.json())
+    .then(data => addCard(data.results)
+    
+    )
+}
+
+
 function addCard(data){
+    console.log(data);
     data.forEach(element =>{
         cards.append(createCard(element))
     })
